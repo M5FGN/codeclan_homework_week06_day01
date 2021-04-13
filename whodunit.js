@@ -128,33 +128,33 @@
 // Episode 7
 
 // Miss Scarlet - inside the changeMurderer() plotTwist is called but the final step of this is unexpectedOutcome() so the murderer returned by changeMurderer is Miss Scarlet
-// Above was wrong - Mr Green is correct because...?
+// Above was wrong - Mr Green is correct because...? the outer function overwrites the nested function because murderer has no let/const keyword.
 
-// let murderer = 'Professor Plum';
+let murderer = 'Professor Plum';
 
-// const changeMurderer = function() {
-//   murderer = 'Mr. Green';
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
 
-//   const plotTwist = function() {
-//     let murderer = 'Colonel Mustard';
+  const plotTwist = function() {
+    let murderer = 'Colonel Mustard';
 
-//     const unexpectedOutcome = function() {
-//       murderer = 'Miss Scarlet';
-//     }
+    const unexpectedOutcome = function() {
+      murderer = 'Miss Scarlet';
+    }
 
-//     unexpectedOutcome();
-//   }
+    unexpectedOutcome();
+  }
 
-//   plotTwist();
-// }
+  plotTwist();
+}
 
-// const declareMurderer = function() {
-//   return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
 
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
 
 
 // Episode 8
@@ -201,16 +201,16 @@
 
 // Professor Plum as there is no function/call to make the if statement run and change it to Mrs Peacock
 
-let murderer = 'Professor Plum';
+// let murderer = 'Professor Plum';
 
-if (murderer === 'Professor Plum') {
-  let murderer = 'Mrs. Peacock';
-}
+// if (murderer === 'Professor Plum') {
+//   let murderer = 'Mrs. Peacock';
+// }
 
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
 
-const verdict = declareMurderer();
-console.log(verdict);
+// const verdict = declareMurderer();
+// console.log(verdict);
 
